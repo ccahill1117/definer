@@ -20,7 +20,7 @@
     <label for="alt_def">Add Alternative Definition</label>
     <input id="alt_def" name="alt_def" class="form-control" type="text" value="<%=@word.alt_definition%>">
   </div>
-  <button type="submit" class="btn">Go!</button>
+  <button type="submit" class="btn-primary">Update Fields!</button>
 </form>
 
 <form action="/words/<%= @word.id %>" method="post">
