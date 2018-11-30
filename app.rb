@@ -6,9 +6,7 @@ require('./lib/definer')
 
 
 get ('/') do
-
   @library = Word.all()
-
   erb(:input)
 end
 
@@ -24,7 +22,6 @@ end
 get ('/words/:id') do
   @word = Word.find(params[:id])
   @library = Word.all()
-
   erb(:word)
 end
 
@@ -34,6 +31,11 @@ post('/words/:id') do
   @word = Word.find(params[:id])
   @word.word = word
   @word.definition = definition
-
   erb(:word)
+end
+
+post('/words/<%= @word.id %>') do
+  delete_word = Word.find(params[:id])
+  Word.delete_word(delete_word)
+  erb(:item)
 end

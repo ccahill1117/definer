@@ -37,4 +37,16 @@ class Word
     end
   end
 
+  def self.delete_word(word_id)
+  @@library.each do |word|
+    if word.id == word_id
+      @@library.delete(@@library[word_id])
+    break
+    else
+      item.name = item.name
+      item.rank = item.rank
+    end
+  end
+end
+
 end
