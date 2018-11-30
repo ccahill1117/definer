@@ -1,5 +1,6 @@
 <h3>Selected Word : <%= @word.word %></h3>
 <h3>Selected Word Definition : <%= @word.definition %></h3>
+<h3>Selected Word Antonym : <%= @word.antonym %></h3>
 
 <form action="/words/<%= @word.id %>" method="post">
   <div class="form-group">
@@ -9,6 +10,10 @@
   <div class="form-group">
     <label for="def">Update Definition</label>
     <input id="def" name="def" class="form-control" type="text" value="<%=@word.definition%>">
+  </div>
+  <div class="form-group">
+    <label for="opposite">Add Antonym!</label>
+    <input id="opposite" name="opposite" class="form-control" type="text" value="<%=@word.antonym%>">
   </div>
   <button type="submit" class="btn">Go!</button>
 </form>

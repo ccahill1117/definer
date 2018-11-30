@@ -28,9 +28,11 @@ end
 post('/words/:id') do
   word = params["word"]
   definition = params["def"]
+  antonym = params["opposite"]
   @word = Word.find(params[:id])
   @word.word = word
   @word.definition = definition
+  @word.antonym = antonym
   erb(:word)
 end
 
