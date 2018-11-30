@@ -7,6 +7,7 @@ class Word
   def initialize(attributes)
     @word = attributes.fetch(:word)
     @definition = attributes.fetch(:definition)
+    @image = attributes.fetch(:image)
     @id = @@counter
     @@counter = @@counter + 1
   end
@@ -19,10 +20,10 @@ class Word
     @@library.push(self)
   end
 
-  fastidious = Word.new({:word=> "fastidious", :definition=> "very attentive to accuracy and detail"})
-  circumspect = Word.new({:word=> "circumspect", :definition=> "very unwilling to take tasks"})
-  repudiate = Word.new({:word=> "repudiate", :definition=> "to refuse to recognize as true"})
-  benevolent = Word.new({:word=> "benevolent", :definition=> "kind or generous"})
+  fastidious = Word.new({:word=> "fastidious", :definition=> "very attentive to accuracy and detail", :image=> "https://i.pinimg.com/originals/cb/ca/e6/cbcae6d3a1a4ca315f31493eb35e4bc4.png"})
+  circumspect = Word.new({:word=> "circumspect", :definition=> "very unwilling to take tasks", :image=> "https://static1.squarespace.com/static/5524448ee4b0d6f6b83ab9e2/t/57cf3de246c3c4d2933aa57c/1518795955078/?format=1500w"})
+  repudiate = Word.new({:word=> "repudiate", :definition=> "to refuse to recognize as true", :image=> "https://i.pinimg.com/originals/cb/ca/e6/cbcae6d3a1a4ca315f31493eb35e4bc4.png"})
+  benevolent = Word.new({:word=> "benevolent", :definition=> "kind or generous", :image=> "https://static1.squarespace.com/static/5524448ee4b0d6f6b83ab9e2/t/57cf3de246c3c4d2933aa57c/1518795955078/?format=1500w"})
   fastidious.save()
   circumspect.save()
   repudiate.save()

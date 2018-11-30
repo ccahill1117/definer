@@ -45,6 +45,7 @@ post('/words/:id') do
   @word.definition = definition
   @word.antonym = antonym
   @word.alt_definition = alt_def
+  @word.image = image
   erb(:word)
 end
 
