@@ -6,8 +6,7 @@ require('./lib/definer')
 
 
 get ('/') do
-  # fastidious = Word.new({:word=> "fastidious", :definition=> "very attentive to accuracy and detail"})
-  # circumspect = Word.new({:word=> "circumspect", :definition=> "very unwilling to take tasks"})
+
   @library = Word.all()
 
   erb(:input)

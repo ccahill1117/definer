@@ -19,6 +19,15 @@ class Word
     @@library.push(self)
   end
 
+  fastidious = Word.new({:word=> "fastidious", :definition=> "very attentive to accuracy and detail"})
+  circumspect = Word.new({:word=> "circumspect", :definition=> "very unwilling to take tasks"})
+  repudiate = Word.new({:word=> "repudiate", :definition=> "to refuse to recognize as true"})
+  benevolent = Word.new({:word=> "benevolent", :definition=> "kind or generous"})
+  fastidious.save()
+  circumspect.save()
+  repudiate.save()
+  benevolent.save()
+
   def self.find(id)
     word_id = id.to_i()
     @@library.each do |word|
