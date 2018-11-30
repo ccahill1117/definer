@@ -39,6 +39,7 @@ post('/words/:id') do
   definition = params["def"]
   antonym = params["opposite"]
   alt_def = params["alt_def"]
+  image = params["image"]
   @word = Word.find(params[:id])
   @word.word = word
   @word.definition = definition

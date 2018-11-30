@@ -12,6 +12,8 @@
   <button type="submit" class="btn-primary">Add Word to Library!</button>
 </form>
 
+<h2>Click on words for more information</h2>
+
 <% @library.each do |word| %>
 <h4><a href ="/words/<%=word.id%>"><%= word.word %></a></h4>
 <% end %>

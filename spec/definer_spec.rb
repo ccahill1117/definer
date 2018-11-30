@@ -19,3 +19,9 @@ describe("Word#reject_double") do
     expect(Word.reject_double("fastidious")).to(eq(""))
   end
 end
+
+describe("Word#delete_word") do
+  it("deletes a word from the word library") do
+    expect(Word.delete_word(1))
+  end
+end

@@ -2,7 +2,7 @@ class Word
   @@library = []
   @@counter = 1
 
-  attr_accessor :word, :definition, :id, :alt_definition, :antonym
+  attr_accessor :word, :definition, :id, :alt_definition, :antonym, :image
 
   def initialize(attributes)
     @word = attributes.fetch(:word)
