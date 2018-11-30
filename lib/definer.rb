@@ -23,7 +23,7 @@ class Word
     word_id = id.to_i()
     @@library.each do |word|
       if word.id == word_id
-        return item
+        return word
       end
     end
   end

@@ -1,0 +1,19 @@
+<h3>Selected Word : <%= @word.word %></h3>
+<h3>Selected Word Definition : <%= @word.definition %></h3>
+
+<form action="/words/<%= @word.id %>" method="post">
+  <div class="form-group">
+    <label for="word">Update Word</label>
+    <input id="word" name="word" class="form-control" type="text" value="<%=@word.word%>">
+  </div>
+  <div class="form-group">
+    <label for="def">Update Definition</label>
+    <input id="def" name="def" class="form-control" type="text" value="<%=@word.definition%>">
+  </div>
+  <button type="submit" class="btn">Go!</button>
+</form>
+
+
+<a href="/">
+<h2>back to home page</h2>
+</a>
