@@ -1,2 +1,7 @@
 <h2><%=@test%>
 </h2>
+
+<% @library.each do |word| %>
+<h4> <a href ="/words/<%= word.id %>"><%= word.word %></a>
+</h4>
+<% end %>
