@@ -49,4 +49,14 @@ class Word
   end
 end
 
+  def self.reject_double(user_word)
+    @@library.each do |word|
+     if word.word === nil
+       return false
+     elsif word.word.include?(user_word)
+       return true
+     end
+   end
+  end
+
 end

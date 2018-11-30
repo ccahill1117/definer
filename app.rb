@@ -13,9 +13,18 @@ end
 post ('/') do
   word = params["word"]
   definition = params["def"]
-  @library = Word.all()
-  word = Word.new({:word=> word, :definition=> definition})
-  word.save()
+  if (word == "") || (definition == "")
+    @error = "you need to enter a name and a rank!"
+    @library = Word.all()
+  elsif Word.reject_double(word) == true
+    @error = "name is already used"
+    @library = Word.all()
+  else
+    @error = ""
+    word = Word.new({:word=> word, :definition=> definition})
+    word.save()
+    @library = Word.all()
+  end
   erb(:input)
 end
 
