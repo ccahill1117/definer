@@ -2,6 +2,20 @@
 </h2>
 
 <% @library.each do |word| %>
-<h4> <a href ="/words/<%= word.id %>"><%= word.word %></a>
+<h4><a href ="/words/<%=word.id%>"><%= word.word %></a>
 </h4>
 <% end %>
+
+<h3>Add a word below!</h3>
+
+<form action="/" method="post">
+  <div class="form-group">
+    <label for="word">Word</label>
+    <input id="word" name="word" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label for="def">Definition</label>
+    <input id="def" name="def" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Go!</button>
+</form>
