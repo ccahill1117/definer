@@ -39,16 +39,20 @@ class Word
   end
 
   def self.delete_word(word_id)
-  @@library.each do |word|
-    if word.id == word_id
-      @@library.delete(@@library[word_id])
-    break
-    else
-      item.name = item.name
-      item.rank = item.rank
+    @@library.each do |word|
+      if word.id == word_id
+        @@library.delete(@@library[word_id])
+      break
+      else
+        item.name = item.name
+        item.rank = item.rank
+      end
     end
   end
-end
+
+  def self.sort_alphabetical
+    @@library.sort_by {|word| word.word}
+  end
 
   def self.reject_double(user_word)
     @@library.each do |word|

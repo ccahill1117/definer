@@ -7,23 +7,28 @@ require('./lib/definer')
 
 get ('/') do
   @library = Word.all()
+  @library = Word.sort_alphabetical()
   erb(:input)
 end
 
 post ('/') do
   word = params["word"]
   definition = params["def"]
+  image = ""
   if (word == "") || (definition == "")
     @error = "you need to enter a name and a rank!"
     @library = Word.all()
+    @library = Word.sort_alphabetical()
   elsif Word.reject_double(word) == true
     @error = "name is already used"
     @library = Word.all()
+    @library = Word.sort_alphabetical()
   else
     @error = ""
-    word = Word.new({:word=> word, :definition=> definition})
+    word = Word.new({:word=> word, :definition=> definition, :image=> image})
     word.save()
     @library = Word.all()
+    @library = Word.sort_alphabetical()
   end
   erb(:input)
 end
