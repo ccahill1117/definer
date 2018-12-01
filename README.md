@@ -14,6 +14,10 @@ _This web application provides a default library of vocabulary words which may b
 * _Navigate to cloned directory via terminal_
 * _$ ruby app.rb_
 
+_or_
+
+* _Navigate to https://safe-meadow-76979.herokuapp.com/_
+
 ## Known Bugs
 
 __
