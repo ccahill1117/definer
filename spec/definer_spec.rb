@@ -3,7 +3,7 @@ require('rspec')
 
 describe("Word") do
   it("creates a new word entry") do
-    circumspect = Word.new({:word=> "circumspect", :definition=> "very unwilling to take tasks"})
+    circumspect = Word.new({:word=> "circumspect", :definition=> "very unwilling to take tasks", :image=> ""})
     expect(circumspect.word()).to(eq("circumspect"))
   end
 end
@@ -16,12 +16,12 @@ end
 
 describe("Word#reject_double") do
   it("looks in current library to see if word has already been added") do
-    expect(Word.reject_double("fastidious")).to(eq(""))
+    expect(Word.reject_double("fastidious")).to(eq(true))
   end
 end
 
 describe("Word#delete_word") do
   it("deletes a word from the word library") do
-    expect(Word.delete_word(1))
+    expect(Word.delete_word(1)).to(eq(nil))
   end
 end
