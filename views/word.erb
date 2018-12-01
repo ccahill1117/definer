@@ -28,12 +28,9 @@
 </form>
 
 <form action="/words/<%= @word.id %>" method="post">
- <input class='btn btn-primary' type='submit' value='Delete'>
+  <input class='btn btn-primary' type='submit' value='Delete'>
 </form>
 
 <h3>Unique word image:</h3>
 <img src="<%=@word.image%>" width="200px">
-
-<a href="/">
-<h2>back to home page</h2>
-</a>
+<a href="/"><h2>back to home page</h2></a>
