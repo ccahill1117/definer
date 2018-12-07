@@ -1,3 +1,7 @@
 body {
   color: blue;
 }
+
+.boundarydiv {
+  border-style: solid;
+}

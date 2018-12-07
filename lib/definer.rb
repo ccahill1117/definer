@@ -2,11 +2,11 @@ class Word
   @@library = []
   @@counter = 1
 
-  attr_accessor :word, :definition, :id, :alt_definition, :antonym, :image
+  attr_accessor :word, :definitions, :id, :alt_definition, :antonym, :image
 
   def initialize(attributes)
     @word = attributes.fetch(:word)
-    @definition = attributes.fetch(:definition)
+    @definitions = [attributes.fetch(:definition)]
     @image = attributes.fetch(:image)
     @id = @@counter
     @@counter = @@counter + 1

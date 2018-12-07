@@ -1,8 +1,8 @@
 require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**/*.rb')
-also_reload('public/**/styles.css')
 require('./lib/definer')
+require('pry')
 
 
 get ('/') do
@@ -39,18 +39,21 @@ get ('/words/:id') do
   erb(:word)
 end
 
-post('/words/:id') do
+post('/words/:id/others') do
   word = params["word"]
-  definition = params["def"]
   antonym = params["opposite"]
-  alt_def = params["alt_def"]
   image = params["image"]
   @word = Word.find(params[:id])
   @word.word = word
-  @word.definition = definition
   @word.antonym = antonym
-  @word.alt_definition = alt_def
   @word.image = image
+  erb(:word)
+end
+
+post('/words/:id/defs') do
+  @word = Word.find(params[:id])
+  addl_def = params["alt_def"]
+  (@word.definitions).push(addl_def)
   erb(:word)
 end
 
