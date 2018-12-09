@@ -8,6 +8,7 @@ require('pry')
 get ('/') do
   @library = Word.all()
   @library = Word.sort_alphabetical()
+  # binding.pry
   erb(:input)
 end
 
@@ -16,11 +17,11 @@ post ('/') do
   definition = params["def"]
   image = ""
   if (word == "") || (definition == "")
-    @error = "you need to enter a name and a rank!"
+    @error = "you need to enter a word and definition!"
     @library = Word.all()
     @library = Word.sort_alphabetical()
   elsif Word.reject_double(word) == true
-    @error = "name is already used"
+    @error = "word is already used"
     @library = Word.all()
     @library = Word.sort_alphabetical()
   else
@@ -37,6 +38,13 @@ get ('/words/:id') do
   @word = Word.find(params[:id])
   @library = Word.all()
   erb(:word)
+end
+
+post ('/words/:id') do
+  word = Word.find(params[:id])
+  Word.delete_word(word)
+  # binding.pry
+  redirect('/')
 end
 
 post('/words/:id/others') do
