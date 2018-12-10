@@ -33,9 +33,9 @@
   <h4>Definitions for <%= @word.word %></h4>
     <ul>
       <% @word.definitions.each do |definition| %>
-      <li> <%= definition %> def # <%= @word.definitions.index(definition) %>
+      <li> <%= definition %>
         <form action="/words/<%= @word.id %>/deletedef/<%= @word.definitions.index(definition) %>" method="post">
-          <button type="submit" name="button">Delete Definition</button>
+          <button class="btn btn-danger" type="submit" name="button">Delete Definition</button>
         </form>
       </li>
       <% end %>
@@ -43,7 +43,7 @@
 </div>
 
 <form action="/words/<%= @word.id %>" method="post">
-  <input class='btn btn-primary' type='submit' value='Delete Word !'>
+  <input class='btn btn-warning' type='submit' value='Delete Word !'>
 </form>
 
 <h3>Unique word image:</h3>
