@@ -47,6 +47,14 @@ post ('/words/:id') do
   redirect('/')
 end
 
+post ('/words/:id/deletedef/:index') do
+  @word = Word.find(params[:id])
+  delete_index = params[:index].to_i()
+  @word.definitions.delete_at(delete_index)
+  # binding.pry
+  erb(:word)
+end
+
 post('/words/:id/others') do
   word = params["word"]
   antonym = params["opposite"]
