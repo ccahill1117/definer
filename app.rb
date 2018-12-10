@@ -8,7 +8,6 @@ require('pry')
 get ('/') do
   @library = Word.all()
   @library = Word.sort_alphabetical()
-  # binding.pry
   erb(:input)
 end
 
@@ -43,7 +42,6 @@ end
 post ('/words/:id') do
   word = Word.find(params[:id])
   Word.delete_word(word)
-  # binding.pry
   redirect('/')
 end
 
@@ -51,7 +49,6 @@ post ('/words/:id/deletedef/:index') do
   @word = Word.find(params[:id])
   delete_index = params[:index].to_i()
   @word.definitions.delete_at(delete_index)
-  # binding.pry
   erb(:word)
 end
 
