@@ -16,7 +16,7 @@ _This web application provides a default library of vocabulary words which may b
 
 _or_
 
-* _Navigate to https://safe-meadow-76979.herokuapp.com/_
+* _Navigate to https://secure-forest-62329.herokuapp.com/
 
 ## Known Bugs
 
